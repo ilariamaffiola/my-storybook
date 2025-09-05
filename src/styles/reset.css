@@ -1,0 +1,30 @@
+/* Usiamo un box-sizing model */
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+/*rimuoviamo i margini e i padding di default*/
+* {
+  margin: 0;
+}
+
+/* Miglioriamo la leggibilità del nostro carattere */
+body {
+  line-height: 1.25;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* cambiamo il display di default dei media in block */
+
+img, canvas, picture, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*i controlli del form andranno a ereditare il font e il colore*/
+:where(*){
+    font: inherit;
+    color: inherit;
+}
