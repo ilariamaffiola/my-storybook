@@ -1,0 +1,11 @@
+/*questo selettore avanzato viene utilizzato per definire le variabili CSS globali e rappresenta l'elemento radice del documento, un pò come scrivere html{} ma con un peso maggiore*/
+:root {
+    /*Spacing*/
+    /*la sintassi qui sotto è anche chiamata "custom property"*/
+    --spacing-zero: 0;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+}

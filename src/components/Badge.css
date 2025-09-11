@@ -1,0 +1,6 @@
+.badge{
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-xs);
+};
