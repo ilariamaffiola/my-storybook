@@ -63,6 +63,9 @@ export const Default: Story = {
   render: () => (
     <>
       <Style />
+      <h1>Spacing</h1>
+      <p>Our spacing variables use a clamping mechanism to ensure that the spacing is scalable across different screen sizes. *This is done by using the `clamp()` CSS function. *The minimum viewport width is 400px and the maximum is 1200px.</p>
+      
       <dl>
         {["zero", "xs", "sm", "md", "lg", "xl"].map(key => (
           <React.Fragment key={key}>

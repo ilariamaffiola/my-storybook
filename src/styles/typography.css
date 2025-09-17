@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:&display=swap'); /*display swap mostra subito con fallback, poi sostituisce (la scelta più usata per UX). Il termine fallback in informatica (e in CSS) significa “ripiego” o “alternativa di riserva” che viene usata se la prima scelta non è disponibile.*/
+html {
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+}
+/*si possono andare a mettere direttamente nel tag html perché la font family funziona per inheritance, quindi tutti ereditano il font dal parent*/
+
+body{ 
+    font-size: var(--font-size-body);
+}
+
+.font-size-hero {
+    font-size: var(--font-size-hero);   
+}
+
+:where(h1, .font-size-h1) {
+    font-size: var(--font-size-h1);
+    margin-bottom: 0.25em;
+    text-wrap: balance;
+}
+
+:where(h2, .font-size-h2) {
+    font-size: var(--font-size-h2);
+    margin-bottom: 0.25em;
+    text-wrap: balance;
+}
+:where(h3, .font-size-h3) {
+    font-size: var(--font-size-h3);
+    margin-bottom: 0.25em;
+    text-wrap: balance;
+}
+:where(h4, .font-size-h4) {
+    font-size: var(--font-size-h4);
+    margin-bottom: 0.25em;
+    text-wrap: balance;
+}
+:where(h5, .font-size-h5) {
+    font-size: var(--font-size-h5);
+    margin-bottom: 0.25em;
+    text-wrap: balance;
+}
+:where(h6, .font-size-h6) {
+    font-size: var(--font-size-h6);
+    margin-bottom: 0.25em;
+    text-wrap: balance;
+}
+
+:where(p, .font-size-body) {
+    font-size: var(--font-size-body);
+    margin-bottom: 1em;
+}
+
+:where(small, .font-size-sm) {
+    font-size: var(--font-size-sm);
+}
+
+:where(.font-size-xs) {
+    font-size: var(--font-size-xs);
+}

@@ -67,3 +67,17 @@ export default tseslint.config([
   },
 ])
 ```
+# Boolean Design System
+
+## Useful Links
+Eccoli in chiaro così puoi copiarli e incollarli direttamente:
+
+Understanding linear scale:
+  [https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/)
+Fluid dimension calculator:
+  [https://fluid.style/spacing](https://fluid.style/spacing)
+Vertical Rhythm:
+  [https://24ways.org/2006/compose-to-a-vertical-rhythm/](https://24ways.org/2006/compose-to-a-vertical-rhythm/)
+ Modular scale:
+  [https://www.modularscale.com/](https://www.modularscale.com/)
+
