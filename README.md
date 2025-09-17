@@ -81,3 +81,19 @@ Vertical Rhythm:
  Modular scale:
   [https://www.modularscale.com/](https://www.modularscale.com/)
 
+In un app e non in un design system è consigliato rendere univoche le classi modificando il nome del file css:
+es.
+Badge.module.css
+
+importandolo poi all'interno del file come oggetto, quindi:
+import styles "./Badge.module.css";
+
+i nomi di classi invece che chiamarli (es. classname="badge") li chiami:
+es.
+<div classname={`${styles.badge} ${styles[variant]}`} {..attrs}>
+  {children}
+</div>
+
+ALTRIMENTI(nei design system):
+installare react-shadow-root
+npm i react-shadow

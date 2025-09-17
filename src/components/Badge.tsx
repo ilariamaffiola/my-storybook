@@ -1,6 +1,7 @@
 import type React from 'react';
 //con la definizione import type React from 'react'; diciamo al codice di importare solo le definizioni di tipo, per esempio React.FC o React,ReactNode
-import './Badge.css';
+import css from'./Badge.css?raw';
+import root from 'react-shadow';
 
 type BadgeProps = {
     children: React.ReactNode;
@@ -19,9 +20,12 @@ export const Badge: React.FC<BadgeProps> = ({
      ...attrs }) => {
 
     return (
-    <div className={`badge ${variant}`} {...attrs}>
-        {children}
-    </div>
+        <root.div>
+            <style>{css}</style>
+            <div className={`badge ${variant}`} {...attrs}>
+                {children}
+            </div>
+        </root.div>
     );
 
 };
