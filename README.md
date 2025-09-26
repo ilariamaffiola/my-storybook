@@ -97,3 +97,7 @@ es.
 ALTRIMENTI(nei design system):
 installare react-shadow-root
 npm i react-shadow
+
+-[Tab accessibility] (https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)
+
+-[Tab accessibiliyy guide] (https://accessibilitymadeeasy.org/accessible-tabs-a-step-guide/)

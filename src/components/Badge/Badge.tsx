@@ -2,7 +2,6 @@ import type React from 'react';
 //con la definizione import type React from 'react'; diciamo al codice di importare solo le definizioni di tipo, per esempio React.FC o React,ReactNode
 import css from'./Badge.css?raw';
 import root from 'react-shadow';
-
 type BadgeProps = {
     children: React.ReactNode;
     variant?: "default" | "positive" | "negative";
