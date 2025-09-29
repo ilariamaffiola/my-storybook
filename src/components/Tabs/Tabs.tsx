@@ -1,9 +1,14 @@
 import React from "react";
+import css from "./Tabs.css?raw";
 import { List } from "./Tabs.List";
 import { TabsContext } from "./Tabs.context";
 import type { ItemProps } from "./Tabs.Item";
 import { Item } from "./Tabs.Item";
 import { Tab } from "./Tabs.tab";
+import root from "react-shadow";
+import { Global } from "storybook/internal/theming";
+import { GlobalStyles } from "./GlobalStyles";
+
 
 type TabsProps = {
   children: React.ReactNode;
@@ -47,7 +52,9 @@ export const Tabs: React.FC<TabsProps> & { Item: typeof Item } = ({
   }
 
   return (
-    <div role="tablist">
+    <root.div role="tablist">
+      <GlobalStyles />
+      <style>{css}</style>
       <TabsContext.Provider value={{ activeTab, setActiveTab }}>
         <List tabsLabels={tabsLabels} />
 
@@ -56,7 +63,7 @@ export const Tabs: React.FC<TabsProps> & { Item: typeof Item } = ({
           return <Tab id={tabId} key={tabId}>{child.props.children}</Tab>;
         })}
       </TabsContext.Provider>
-    </div>
+    </root.div>
   );
 };
 

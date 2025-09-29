@@ -1,6 +1,5 @@
 import React from "react";
 import { Button } from "./Tabs.button";
-
 type TabsListProp = {
   tabsLabels: {
     label: React.ReactNode;
