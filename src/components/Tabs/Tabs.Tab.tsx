@@ -11,7 +11,6 @@ export const Tab: React.FC<TabProps> = ({ id, children }) => {
     const { activeTab } = useTabsContext();
     return (
       <div
-        key={id}
         id={id}
         role="tabpanel"
         aria-labelledby={`button-${id}`}

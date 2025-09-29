@@ -1,0 +1,4 @@
+[role="tablist"] {
+    display: flex;
+    gap: var(--spacing-md);
+}

@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react-vite'
 
+
 import '../src/styles/reset.css';
 import '../src/styles/variables.css';
 import '../src/styles/typography.css';
@@ -21,5 +22,6 @@ const preview: Preview = {
     }
   },
 };
+
 
 export default preview;

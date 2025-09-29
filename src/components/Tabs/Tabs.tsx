@@ -24,18 +24,22 @@ export const Tabs: React.FC<TabsProps> & { Item: typeof Item } = ({
   const [activeTab, setActiveTab] = React.useState<string>(id + "-0");
 
   // Cloniamo i figli validi aggiungendo un id univoco
-  const validChildren = React.Children.toArray(children)
-    .filter(isTabValidChildren)
-    .map((child, i) =>
-      React.cloneElement(child, {
-        id: id + "-" + i,
-        key: id + "-" + i,
-      })
-    );
+  const validChildren = React.useMemo(() => 
+    React.Children.toArray(children)
+      .filter(isTabValidChildren)
+      .map((child, i) => {
+        const tabId = `${id}-${i}`;
+        return React.cloneElement(child, {
+          id: tabId,
+          key: tabId,
+        });
+      }),
+    [children, id]
+  );
 
   const tabsLabels = validChildren.map((child) => ({
     label: (child.props as ItemProps).label,
-    tabId: child.props.id,
+    tabId: child.props.id as string,
   }));
 
   if (validChildren.length !== React.Children.count(children)) {
@@ -48,7 +52,7 @@ export const Tabs: React.FC<TabsProps> & { Item: typeof Item } = ({
         <List tabsLabels={tabsLabels} />
 
         {validChildren.map((child) => {
-          const tabId = child.props.id;
+          const tabId = child.props.id as string;
           return <Tab id={tabId} key={tabId}>{child.props.children}</Tab>;
         })}
       </TabsContext.Provider>
