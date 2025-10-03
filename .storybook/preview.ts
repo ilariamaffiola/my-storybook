@@ -1,9 +1,11 @@
 import type { Preview } from '@storybook/react-vite'
 
+import { withThemeByClassName } from '@storybook/addon-themes';
 
 import '../src/styles/reset.css';
 import '../src/styles/variables.css';
 import '../src/styles/typography.css';
+
 
 const preview: Preview = {
   parameters: {
@@ -19,8 +21,18 @@ const preview: Preview = {
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
       test: 'todo'
-    }
+    },
   },
+  decorators: [
+    withThemeByClassName({ 
+      themes: {
+        light: "light-theme",
+        dark: "dark-theme",
+      },
+      defaultTheme:"light",
+      parentSelector:"body",
+    }),
+  ]
 };
 
 

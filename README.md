@@ -101,3 +101,49 @@ npm i react-shadow
 -[Tab accessibility] (https://www.w3.org/WAI/ARIA/apg/patterns/tabs/)
 
 -[Tab accessibiliyy guide] (https://accessibilitymadeeasy.org/accessible-tabs-a-step-guide/)
+
+-Addon per i temi 
+npm i @storybook/addon-themes
+
+
+## Test
+
+```
+npm i -D vitest @testing-library/dom @testing-library/jest-dom @testing-library/react @testing-library/user-event @types/jest @vitejs/plugin-react-swc jsdom
+```
+
+```
+npm install -D @playwright/test
+
+
+npx playwright install
+```
+
+
+## React Feather 
+
+npm i react-feather
+
+import React from 'react';
+import { Camera } from 'react-feather';
+
+const App = () => {
+  return <Camera />
+};
+
+export default App;
+
+Icons can be configured with inline props:
+
+<Camera color="red" size={48} />
+
+You can also include the whole icon pack:
+
+import React from 'react';
+import * as Icon from 'react-feather';
+
+const App = () => {
+  return <Icon.Camera />
+};
+
+export default App;

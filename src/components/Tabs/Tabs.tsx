@@ -6,7 +6,6 @@ import type { ItemProps } from "./Tabs.Item";
 import { Item } from "./Tabs.Item";
 import { Tab } from "./Tabs.tab";
 import root from "react-shadow";
-import { Global } from "storybook/internal/theming";
 import { GlobalStyles } from "./GlobalStyles";
 
 
@@ -52,7 +51,7 @@ export const Tabs: React.FC<TabsProps> & { Item: typeof Item } = ({
   }
 
   return (
-    <root.div role="tablist">
+    <root.div data-testid="tabs-root">
       <GlobalStyles />
       <style>{css}</style>
       <TabsContext.Provider value={{ activeTab, setActiveTab }}>

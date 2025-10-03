@@ -19,11 +19,11 @@ export const List: React.FC<TabsListProp> = ({ tabsLabels }) => {
             newIndex = 0;
             break;
         case "ArrowRight":
-        case "ArrowUp":
+        case "ArrowDown":
             newIndex = (currentIndex + 1) % buttons.length;
             break;
         case "ArrowLeft":
-        case "ArrowDown":
+        case "ArrowUp":
             newIndex = (currentIndex - 1 + buttons.length) % buttons.length;
             break;
         case "End":

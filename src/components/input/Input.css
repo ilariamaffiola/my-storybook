@@ -1,0 +1,104 @@
+.container{
+    --accent-color: light-dark(var(--color-gray-9), var(--color-gray-1));
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: calc(24rem / 16) auto  calc(24rem / 16);
+    position: relative;
+    padding: 0.25em;
+    &:where(.radio) {
+        display: flex;
+        flex-direction: column;
+    }
+    margin-bottom: 1rem;
+    
+}
+
+:is(label, .label) {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    color: light-dark(var(--color-gray-9), var(--color-gray-1));
+    font-weight: 800;
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    margin-bottom: 0.25em;
+}
+
+
+input:not([type="radio"]), select{
+    grid-row: 2/3;
+    grid-column: 1/4;
+    min-height: calc(24rem/ 16);
+}
+
+.input-icon{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(24rem/16);
+    pointer-events: none;
+
+    &:where(.left){
+        grid-column: 1/2;
+    }
+    
+    > svg {
+        width: 1rem;
+        height: 1rem;
+
+    }
+}
+
+.container:has(.input-icon) input:not([type='radio']){
+    padding-right: calc(24rem/16);
+}
+
+.container:has(.input-icon.left) input:not([type='radio']){
+    padding-left: calc(24rem/16);
+    padding-right: 0.25em;
+}
+
+.input-container:has(input[type='radio']){
+   display: flex;
+   gap: 1rem;
+}
+
+
+:where(input, select):focus {
+   outline: none;
+}
+
+.input-container:has(:where(input, select):focus-visible){
+    outline: 2px solid var(--accent-color);
+    border-radius: 0.25em;
+} 
+.input-container{
+    grid-row: 2/3;
+    grid-column: 1/4;
+    display: grid;
+}
+
+
+.error-text{
+    color: light-dark(var(--color-red-9), var(--color-red-4));
+    font-size: var(--font-size-sm);
+    margin-top: 0.25em;
+    grid-column: 1/4;
+    display: none;
+}
+.container:has([disabled]) {
+ 
+    color: var(--color-gray-3);
+    cursor: not-allowed;
+    
+}
+
+.container:where(.is-invalid){
+   --accent-color: var(--color-red-9);
+
+   .error-text{
+    display: block;
+   }
+}
+

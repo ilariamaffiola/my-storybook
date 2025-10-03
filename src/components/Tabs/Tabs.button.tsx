@@ -12,6 +12,10 @@ export const Button: React.FC<ButtonProp> = React.memo(({children, tabId}) => {
     const { activeTab, setActiveTab } = useTabsContext();
     const [focusable, setFocusable] = React.useState(activeTab === tabId);
 
+    React.useEffect(() => {
+        setFocusable((activeTab ===tabId))
+    }, [activeTab, tabId]);
+
     return (
         <button
             type='button'
@@ -20,9 +24,8 @@ export const Button: React.FC<ButtonProp> = React.memo(({children, tabId}) => {
             aria-selected={activeTab === tabId}
             id={`button-${tabId}`}
             role="tab"
-            tabIndex={focusable ? 0 : -1}
-            onFocus={() => setFocusable(true)}
-            onBlur={() => setFocusable(activeTab === tabId)}
+            tabIndex={activeTab === tabId ? 0 : -1}
+            
         >
             {children}
         </button>
